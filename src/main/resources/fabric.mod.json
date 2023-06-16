@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "seqfunction",
+  "version": "${version}",
+  "name": "SequentialFunction",
+  "description": "",
+  "authors": [],
+  "contact": {
+    "repo": "https://github.com/1131245618/SequentialFunction"
+  },
+  "license": "MIT",
+  "icon": "assets/seqfunction/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "com.zlc.seqfunction.client.SequentialFunctionClient"
+    ],
+    "main": [
+      "com.zlc.seqfunction.SequentialFunction"
+    ]
+  },
+  "mixins": [
+    "seqfunction.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
