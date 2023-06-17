@@ -3,6 +3,7 @@ package com.zlc.seqfunction.util;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.function.CommandFunction;
+import net.minecraft.text.Text;
 
 import java.util.ArrayList;
 import java.util.TimerTask;
@@ -44,8 +45,6 @@ public class SeqFunctionUtil {
         @Override
         public void run() {
             CommandFunction function = this.commandSequence.get(currentFrame);
-            for(CommandFunction.Element e: function.getElements()){
-            }
             this.source.getServer().getCommandFunctionManager().execute(function, source.withSilent().withMaxLevel(2));
             if(currentFrame < frameCount-1){
                 currentFrame += 1;

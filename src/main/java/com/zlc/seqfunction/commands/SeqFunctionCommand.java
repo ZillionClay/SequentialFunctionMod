@@ -9,7 +9,6 @@ import net.minecraft.server.command.CommandManager;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.function.CommandFunction;
 import net.minecraft.server.function.CommandFunctionManager;
-import net.minecraft.text.Text;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -54,12 +53,6 @@ public class SeqFunctionCommand {
             commandFunctions.add(new CommandFunction(commandFunction.getId(), elementArray.toArray(new CommandFunction.Element[0])));
             elementArray.clear();
             SeqFunctionUtil.startSequence(source, commandFunctions);
-        }
-
-        if (functions.size() == 1) {
-            source.sendFeedback(Text.translatable("commands.function.success.single", counter, ((CommandFunction)functions.iterator().next()).getId()), true);
-        } else {
-            source.sendFeedback(Text.translatable("commands.function.success.multiple", counter, functions.size()), true);
         }
 
         return counter;
